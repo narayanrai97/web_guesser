@@ -1,10 +1,26 @@
 <html>
-    <head></head>
+    <head>
+        <style>
+            body {
+                background: <%= color%>;
+            }
+            .cheat {
+                color: white;
+            }
+        </style>
+    </head>
     <body>
         <form>
             <input type='text' name='guess' />
             <input type='submit' value='Guess!' />
         </form>
-        <%= message%>
+        <%= message%><br><br>
+        <!--< number%><br><br>-->
+        You've <%= count%> attempts left to guess!
+        <div class="cheat">
+            <% if params[:cheat] == 'true'%>
+                If you need to cheat, the SECRET NUMBER is <%= number%>
+            <% end %>
+        </div>
     </body>
 </html>
